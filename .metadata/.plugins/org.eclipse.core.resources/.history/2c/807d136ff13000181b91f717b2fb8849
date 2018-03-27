@@ -1,0 +1,19 @@
+package com.hsp.service;
+
+import java.util.ArrayList;
+
+import com.hsp.domain.Users;
+import com.hsp.utils.SqlHelper;
+
+public class UsersService {
+	//验证用户是否合法
+	public boolean checkUser(Users user){
+		//到数据库去验证
+		String sql="seclect * from users where id=? and pwd=?";
+		String paras[] = {Integer(user.getId()).toString(), user.getPassword()};
+		
+		ArrayList al = SqlHelper.
+		return true;
+	}
+
+}

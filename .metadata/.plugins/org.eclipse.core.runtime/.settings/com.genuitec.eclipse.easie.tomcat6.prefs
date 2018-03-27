@@ -1,0 +1,10 @@
+#Sat Mar 24 16:53:47 CST 2018
+TOMCAT_HOME=D\:\\apache-tomcat-6.0.29
+TOMCAT_TEMP=D\:\\apache-tomcat-6.0.29\\temp
+LIBRARY_PATH="D\:\\MyEclipse 6.5\\bin;D\:\\apache-tomcat-6.0.29\\bin"
+TOMCAT_BASE=D\:\\apache-tomcat-6.0.29
+ENDORSED_DIRS="D\:\\apache-tomcat-6.0.29/common/endorsed"
+eclipse.preferences.version=1
+JDK_INSTALLATION_NAME=MyEclipse 6.5
+JDK_HOME=D\:\\MyEclipse 6.5
+SERVER_ENABLEMENT=true

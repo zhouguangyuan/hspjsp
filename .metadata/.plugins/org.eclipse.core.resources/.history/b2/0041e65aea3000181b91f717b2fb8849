@@ -1,0 +1,36 @@
+package com.hsp.utils;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.DriverManager;
+
+public class DBUtil {
+   //定义数据库连接
+	private static Connection ct = null;
+	
+	//定义数据库操作类
+	private static PreparedStatement ps = null;
+	
+	//输出数据类
+	private static ResultSet rs = null;
+	
+	//静 态方式取得链接
+	public Connection getConn(){
+		String username ="root";  //数据库用户名
+		String url = "jdbc:mysql://localhost:3306/test";
+		
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+		}catch(Exception e1){
+			e1.printStackTrace();
+		}
+		
+		try{
+			ct = DriverManager.
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return ct;
+	}
+}

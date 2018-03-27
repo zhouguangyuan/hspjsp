@@ -1,0 +1,70 @@
+package com.hsp.utils;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+//这是一个工具类，专门用于得到连接和关闭连接
+public class DBUtil {
+	// 定义数据库连接
+	private static Connection ct = null;
+
+	// 定义数据库操作类
+	private static PreparedStatement ps = null;
+
+	// 输出数据类
+	private static ResultSet rs = null;
+	
+	private static String driverName = "";
+	private static String username = "";
+	private static String passwd = "";
+	private static String url = "";
+
+	// 静 态方式取得链接
+	public Connection getConn() {
+		String username = "root"; // 数据库用户名
+		String passwd = "123"; // 数据库用户名
+		String url = "jdbc:mysql://localhost:3306/test";
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+
+		try {
+			ct = DriverManager.getConnection(username, url, passwd);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ct;
+	}
+
+	// 释放资源
+	public void close() {
+		if (rs != null) {
+			try {
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		if (ps != null) {
+			try {
+				ps.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		if (ct != null) {
+			try {
+				ct.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+}

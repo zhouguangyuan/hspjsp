@@ -1,0 +1,22 @@
+#Mon Mar 26 14:40:38 CST 2018
+tomcat6Server.myshopping.shouldOverwrite=false
+tomcat6Server.testShooping.isDeployed=true
+tomcat6Server.testShooping.type=WebDeployment
+tomcat6Server.testShooping.isUptoDate=true
+tomcat6Server.myshopping.isDeployed=true
+tomcat6Server.testShooping.deployIsOverProject=false
+tomcat6Server.myshopping.deployIsOverProject=false
+tomcat6Server.testShooping.isExploded=true
+tomcat6Server.myshopping.earProjectName=
+tomcat6Server.testShooping.shouldBackup=false
+tomcat6Server.testShooping.earProjectName=
+eclipse.preferences.version=1
+tomcat6Server.myshopping.deploymentPath=D\:\\apache-tomcat-6.0.29\\webapps\\myshopping
+tomcat6Server.testShooping.deploymentPath=D\:\\apache-tomcat-6.0.29\\webapps\\testShooping
+tomcat6Server.myshopping.isUptoDate=true
+tomcat6Server.testShooping.shouldOverwrite=false
+tomcat6Server.myshopping.isExploded=true
+tomcat6Server.myshopping.contextRoot=/myshopping
+tomcat6Server.myshopping.type=WebDeployment
+tomcat6Server.myshopping.shouldBackup=false
+tomcat6Server.testShooping.contextRoot=/testShooping
