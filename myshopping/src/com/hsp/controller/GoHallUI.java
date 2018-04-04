@@ -2,6 +2,7 @@ package com.hsp.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.hsp.domain.Users;
+import com.hsp.service.BooksService;
 import com.hsp.service.UsersService;
 
 public class GoHallUI extends HttpServlet {
@@ -54,6 +56,11 @@ public class GoHallUI extends HttpServlet {
 		//使用业务逻辑类，完成验证
 		if(userService.checkUser(loginUser)){
 			//说明是合法用户,跳转到购物大厅
+			//给下一个页面hall.jsp准备好要显示的数据
+			//模式开发，在一定程度上约束了程序员的自由
+			BooksService booksSerice = new BooksService();
+			ArrayList al = booksSerice.getAllBooks();
+			request.setAttribute("books", al);
 			request.getRequestDispatcher("/WEB-INF/hall.jsp").forward(request, response);
 		}else{
 			//不合法

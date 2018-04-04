@@ -1,0 +1,39 @@
+package com.hsp.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.hsp.domain.Books;
+import com.hsp.service.BooksService;
+
+public class DisplayBooksUI extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.setContentType("text/html; charset=utf-8"); // 处理中文乱码
+		PrintWriter out = response.getWriter();
+
+
+		// 创建一个Books对象
+		Books books = new Books();
+		BooksService booksService = new BooksService();
+		// 使用业务逻辑类，完成显示
+		if (booksService.displayBooks(books)){
+			// 说明是非空
+			request.setAttribute("books", al);
+			request.getRequestDispatcher("/WEB-INF/hall.jsp").forward(request,
+					response);
+		} else {
+	
+	
+
+		}
+
+	}
+
+}

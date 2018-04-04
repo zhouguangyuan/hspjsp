@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.hsp.utils.DBUtil"/>
+<fullyQualifiedTypeName name="com.kevin.staticdemo.RAMTest"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
 </qualifiedTypeNameHistroy>

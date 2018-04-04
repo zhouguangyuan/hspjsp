@@ -1,0 +1,27 @@
+package com.hsp.service;
+
+import java.awt.print.Book;
+import java.util.ArrayList;
+
+import com.hsp.domain.Books;
+import com.hsp.utils.SqlHelper;
+
+public class BooksService {
+	
+		// 从数据库显示数据出来
+	public ArrayList getBooks() {
+		// 到数据库去查询
+
+		String sql = "SELECT * FROM test.books where 1=?";
+		String paras[] = {"1"};
+		ArrayList al = new SqlHelper().executeQuery(sql, paras);
+        for(int i=0; i<al.size();i++){
+        	Object obj[] = (Object [])al.get(i);
+        	Books book = new Books();
+        	book.setId(Integer.parseInt(obj[0].toString()));
+        	book.set
+        }
+		return al;
+
+	}
+}

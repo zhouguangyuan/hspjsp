@@ -1,0 +1,39 @@
+package com.hsp.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.hsp.domain.Books;
+import com.hsp.service.UsersService;
+
+public class DisplayBooksUI extends HttpServlet {
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		response.setContentType("text/html; charset=utf-8"); // 处理中文乱码
+		PrintWriter out = response.getWriter();
+
+
+		// 创建一个Users对象
+		Books books = new Books();
+		BooksService userService = new BooksService();
+		// 使用业务逻辑类，完成验证
+		if (userService.checkUser(loginUser)) {
+			// 说明是合法用户,跳转到购物大厅
+			request.getRequestDispatcher("/WEB-INF/hall.jsp").forward(request,
+					response);
+		} else {
+			// 不合法
+			request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request,
+					response);
+
+		}
+
+	}
+
+}

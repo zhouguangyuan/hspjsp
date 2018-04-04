@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*, com.hsp.domain.*" pageEncoding="utf-8"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -28,63 +28,19 @@
 
 		<h1>欢迎光临购物大厅</h1>
 		<table border="1">
-			<tr>
-				<th>
-					书名
-				</th>
-				<th>
-					价格
-				</th>
-				<th>
-					出版社
-				</th>
-				<th>
-					点击购买
-				</th>
-			</tr>
-			<tr>
-				<td>
-					JSP开发应用详解
-				</td>
-				<td>
-					45.00
-				</td>
-				<td>
-					电子工业出版社
-				</td>
-				<td>
-					点击购买
-				</td>
-			</tr>
-			<tr>
-				<td>
-					JSP开发应用详解
-				</td>
-				<td>
-					45.00
-				</td>
-				<td>
-					电子工业出版社
-				</td>
-				<td>
-					点击购买
-				</td>
-			</tr>
-			<tr>
-				<td>
-					JSP开发应用详解
-				</td>
-				<td>
-					45.00
-				</td>
-				<td>
-					电子工业出版社
-				</td>
-				<td>
-					点击购买
-				</td>
-			</tr>
+			<tr><th>书名</th><th>价格</th><th>出版社</th><th>点击购买</th></tr>
+			
+			<%
+			//取出request中的ArrayList
+			 ArrayList al =(ArrayList)request.getAttribute("books");
+			 for(int i=0; i< al.size();i++){ 
+			 Book book = (Book)al.get(i);
+			 %>
+			<tr><td><%=book.getName() %></td><td><%=book.getPrice() %></td>	<td><%=book.getPublishHouse()%></td><td>点击购买</td></tr>
+			 <%}%>
 			<tr><td colspan="4"><input type="button" value="Look" /></td></tr>
+
 		</table>
+		<a href="/myshopping">返回重新登陆</a>
 	</body>
 </html>

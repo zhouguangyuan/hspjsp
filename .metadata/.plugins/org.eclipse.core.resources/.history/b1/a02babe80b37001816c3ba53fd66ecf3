@@ -1,0 +1,21 @@
+package com.hsp.service;
+
+import com.hsp.utils.SqlHelper;
+import com.hsp.domain.Books;
+import java.util.ArrayList;
+
+public class BooksService{ 
+	// 从数据库显示数据出来
+	public void displayBooks(Books book) {
+		// 到数据库去查询
+		try{
+			String sql = "SELECT * FROM test.books";
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+
+		ArrayList al = new SqlHelper().executeQuery(sql);
+
+	}
+
+}

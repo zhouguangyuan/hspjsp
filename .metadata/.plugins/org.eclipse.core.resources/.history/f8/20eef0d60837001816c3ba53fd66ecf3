@@ -1,0 +1,15 @@
+package com.hsp.service;
+
+import com.hsp.utils.DBUtil;
+import java.sql.Connection;
+
+public class BooksService {
+	DBUtil dbu = new DBUtil();
+	
+	try{
+		Connection ct = dbu.getConn();
+	}catch(Exception e){
+		
+	}
+
+}

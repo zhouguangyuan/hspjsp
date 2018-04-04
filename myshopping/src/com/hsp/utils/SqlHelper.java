@@ -66,7 +66,7 @@ public class SqlHelper {
 		return rowCount;
 	}
 
-	/** 传入sql语句返回查询结果封装成对象（每一行表示一个对象）集合* */
+	/** 传入sql语句（带参数）返回查询结果封装成对象（每一行表示一个对象）集合* */
 	public ArrayList executeQuery(String sql, String paras[]) {
 		ArrayList al = new ArrayList();
 		try {
@@ -92,7 +92,7 @@ public class SqlHelper {
 		}
 		return al;
 	}
-
+	
 	public boolean executeupdate(String sql, String[] paras) {
 		ct = DBUtil.getConn();
 		try {

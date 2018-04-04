@@ -1,15 +1,5 @@
 <Beans>
     <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
-        <driverClassName>net.sourceforge.jtds.jdbc.Driver</driverClassName>
-        <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
-            <string>-33</string>
-        </identifier>
-        <jarFileName/>
-        <jarFileNames Indexed="true"/>
-        <name>Microsoft SQL Server (jTDS driver)</name>
-        <url>jdbc:jtds:sqlserver://&lt;hostname&gt;[:&lt;port&gt;]/&lt;dbname&gt;</url>
-    </Bean>
-    <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
         <driverClassName>com.microsoft.jdbc.sqlserver.SQLServerDriver</driverClassName>
         <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
             <string>-11</string>
@@ -20,14 +10,14 @@
         <url>jdbc:microsoft:sqlserver://&lt;server_name&gt;:&lt;1433&gt;</url>
     </Bean>
     <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
-        <driverClassName>org.apache.derby.jdbc.ClientDriver</driverClassName>
+        <driverClassName>net.sourceforge.jtds.jdbc.Driver</driverClassName>
         <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
-            <string>-29</string>
+            <string>-33</string>
         </identifier>
         <jarFileName/>
         <jarFileNames Indexed="true"/>
-        <name>Derby</name>
-        <url>jdbc:derby://&lt;server_name&gt;:&lt;port&gt;/&lt;databaseName&gt;[;create=true]</url>
+        <name>Microsoft SQL Server (jTDS driver)</name>
+        <url>jdbc:jtds:sqlserver://&lt;hostname&gt;[:&lt;port&gt;]/&lt;dbname&gt;</url>
     </Bean>
     <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
         <driverClassName>org.hsqldb.jdbcDriver</driverClassName>
@@ -38,6 +28,16 @@
         <jarFileNames Indexed="true"/>
         <name>HSQLDB Server</name>
         <url>jdbc:hsqldb:hsql://&lt;server&gt;[:&lt;1476&gt;]</url>
+    </Bean>
+    <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
+        <driverClassName>org.apache.derby.jdbc.ClientDriver</driverClassName>
+        <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>-29</string>
+        </identifier>
+        <jarFileName/>
+        <jarFileNames Indexed="true"/>
+        <name>Derby</name>
+        <url>jdbc:derby://&lt;server_name&gt;:&lt;port&gt;/&lt;databaseName&gt;[;create=true]</url>
     </Bean>
     <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
         <driverClassName>org.enhydra.instantdb.jdbc.idbDriver</driverClassName>
@@ -60,28 +60,14 @@
         <url>jdbc:mimer:[//[&lt;user&gt;[:&lt;password&gt;]@]&lt;server&gt;[:&lt;1360&gt;]][/&lt;dbname&gt;][property-list]</url>
     </Bean>
     <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
-        <driverClassName>org.apache.derby.jdbc.ClientDriver</driverClassName>
+        <driverClassName>oracle.jdbc.driver.OracleDriver</driverClassName>
         <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
-            <string>3a2a5874:1625243d887:-7fde</string>
-        </identifier>
-        <jarFileName/>
-        <jarFileNames Indexed="true">
-            <Bean Class="net.sourceforge.squirrel_sql.fw.util.beanwrapper.StringWrapper">
-                <string>C:\Users\Administrator\.myeclipse\libs\derby_10.2.2.0\derbyclient.jar</string>
-            </Bean>
-        </jarFileNames>
-        <name>MyEclipse Derby</name>
-        <url>jdbc:derby://&lt;host&gt;:&lt;port&gt;/&lt;db&gt;</url>
-    </Bean>
-    <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
-        <driverClassName>net.sourceforge.jtds.jdbc.Driver</driverClassName>
-        <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
-            <string>-34</string>
+            <string>-2</string>
         </identifier>
         <jarFileName/>
         <jarFileNames Indexed="true"/>
-        <name>Sybase (jTDS driver)</name>
-        <url>jdbc:jtds:sybase://&lt;hostname&gt;[:&lt;port&gt;]/&lt;dbname&gt;</url>
+        <name>Oracle (OCI driver)</name>
+        <url>jdbc:oracle:oci8:@&lt;database_name&gt;</url>
     </Bean>
     <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
         <driverClassName>com.pointbase.net.netJDBCDriver</driverClassName>
@@ -94,14 +80,28 @@
         <url>jdbc:pointbase:embedded:&lt;dbname&gt;</url>
     </Bean>
     <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
-        <driverClassName>oracle.jdbc.driver.OracleDriver</driverClassName>
+        <driverClassName>net.sourceforge.jtds.jdbc.Driver</driverClassName>
         <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
-            <string>-2</string>
+            <string>-34</string>
         </identifier>
         <jarFileName/>
         <jarFileNames Indexed="true"/>
-        <name>Oracle (OCI driver)</name>
-        <url>jdbc:oracle:oci8:@&lt;database_name&gt;</url>
+        <name>Sybase (jTDS driver)</name>
+        <url>jdbc:jtds:sybase://&lt;hostname&gt;[:&lt;port&gt;]/&lt;dbname&gt;</url>
+    </Bean>
+    <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
+        <driverClassName>org.apache.derby.jdbc.ClientDriver</driverClassName>
+        <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>3a2a5874:1625243d887:-7fde</string>
+        </identifier>
+        <jarFileName/>
+        <jarFileNames Indexed="true">
+            <Bean Class="net.sourceforge.squirrel_sql.fw.util.beanwrapper.StringWrapper">
+                <string>C:\Users\Administrator\.myeclipse\libs\derby_10.2.2.0\derbyclient.jar</string>
+            </Bean>
+        </jarFileNames>
+        <name>MyEclipse Derby</name>
+        <url>jdbc:derby://&lt;host&gt;:&lt;port&gt;/&lt;db&gt;</url>
     </Bean>
     <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
         <driverClassName>org.hsqldb.jdbcDriver</driverClassName>
@@ -254,14 +254,14 @@
         <url>jdbc:db2://&lt;host_name&gt;:6789/&lt;dbname&gt;</url>
     </Bean>
     <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
-        <driverClassName>org.sqlite.JDBC</driverClassName>
+        <driverClassName>interbase.interclient.Driver</driverClassName>
         <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
-            <string>-35</string>
+            <string>-3</string>
         </identifier>
         <jarFileName/>
         <jarFileNames Indexed="true"/>
-        <name>SQLite</name>
-        <url>jdbc:sqlite:&lt;path-to-db-file&gt;</url>
+        <name>InterClient</name>
+        <url>jdbc:interbase://&lt;server&gt;/&lt;full_db_path&gt;</url>
     </Bean>
     <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
         <driverClassName>org.axiondb.jdbc.AxionDriver</driverClassName>
@@ -274,14 +274,14 @@
         <url>jdbc:axiondb:&lt;database-name&gt;[:&lt;database-directory&gt;]</url>
     </Bean>
     <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
-        <driverClassName>interbase.interclient.Driver</driverClassName>
+        <driverClassName>org.sqlite.JDBC</driverClassName>
         <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
-            <string>-3</string>
+            <string>-35</string>
         </identifier>
         <jarFileName/>
         <jarFileNames Indexed="true"/>
-        <name>InterClient</name>
-        <url>jdbc:interbase://&lt;server&gt;/&lt;full_db_path&gt;</url>
+        <name>SQLite</name>
+        <url>jdbc:sqlite:&lt;path-to-db-file&gt;</url>
     </Bean>
     <Bean Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriver">
         <driverClassName>com.ncr.teradata.TeraDriver</driverClassName>
